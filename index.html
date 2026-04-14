@@ -3,115 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda - Web Tema Ungu</title>
+    <title>Beranda - Hana Fakhriah | Website Ungu</title>
     <style>
-        /* CSS DIMASUKKAN DI SINI */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+        :root {
+            --ungu-tua: #4a148c;
+            --ungu-medium: #6a1b9a;
+            --ungu-muda: #9c27b0;
+            --lavender: #e1bee7;
+            --lavender-muda: #f3e5f5;
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f3e5f5; /* Ungu sangat muda */
-            color: #4a148c; /* Ungu tua untuk teks */
-            line-height: 1.6;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            color: var(--ungu-tua);
+            line-height: 1.7;
+            min-height: 100vh;
         }
 
         /* Navigasi */
         nav {
-            background-color: #6a1b9a; /* Ungu Medium */
-            padding: 1.2rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            background: linear-gradient(90deg, #6a1b9a, #9c27b0);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 15px rgba(106, 27, 154, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: 0.3s;
+            margin: 0 18px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
         nav a:hover {
             color: #e1bee7;
-            text-shadow: 0 0 5px #fff;
+            text-shadow: 0 0 8px rgba(255,255,255,0.6);
+            transform: translateY(-2px);
         }
 
-        /* Konten Utama */
-        .container {
-            width: 85%;
-            max-width: 800px;
-            margin: 50px auto;
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        /* Hero Section */
+        .hero {
+            max-width: 900px;
+            margin: 80px auto 50px;
             text-align: center;
+            padding: 0 20px;
         }
 
-        h1 {
-            color: #7b1fa2;
-            margin-bottom: 20px;
-            font-size: 2.5rem;
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--ungu-tua);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.4rem;
+            color: var(--ungu-medium);
+            margin-bottom: 30px;
         }
 
         .divider {
-            height: 4px;
-            width: 60px;
-            background-color: #ba68c8;
-            margin: 0 auto 20px;
-            border-radius: 2px;
+            height: 5px;
+            width: 80px;
+            background: linear-gradient(to right, #9c27b0, #e1bee7);
+            margin: 0 auto 30px;
+            border-radius: 10px;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #6a1b9a;
+        /* Card Utama */
+        .main-card {
+            max-width: 850px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 24px;
+            padding: 50px 40px;
+            box-shadow: 0 15px 35px rgba(106, 27, 154, 0.15);
+            text-align: center;
         }
 
-        /* Tombol Aksi */
+        .main-card p {
+            font-size: 1.15rem;
+            color: #5e35b1;
+            margin-bottom: 25px;
+        }
+
+        /* Tombol */
         .btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background-color: #9c27b0;
+            margin: 15px 8px;
+            padding: 14px 32px;
+            background: linear-gradient(90deg, #9c27b0, #7b1fa2);
             color: white;
             text-decoration: none;
-            border-radius: 25px;
-            transition: background 0.3s;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
         }
 
         .btn:hover {
-            background-color: #7b1fa2;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(156, 39, 176, 0.4);
+            background: linear-gradient(90deg, #7b1fa2, #6a1b9a);
         }
 
+        /* Footer */
         footer {
             text-align: center;
-            margin-top: 50px;
-            padding-bottom: 30px;
-            font-size: 0.9rem;
-            color: #6a1b9a;
+            padding: 40px 20px 30px;
+            color: var(--ungu-medium);
+            font-size: 0.95rem;
+            margin-top: 60px;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.95rem;
+            }
+            .main-card {
+                padding: 35px 25px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Navigasi -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="biodata.html">Biodata</a>
-        <a href="galeri.html">Foto</a>
-        <a href="video.html">Video</a>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌸 Hana</a>
+            <div>
+                <a href="index.html">Beranda</a>
+                <a href="biodata.html">Biodata</a>
+                <a href="galeri.html">Galeri Foto</a>
+                <a href="video.html">Video</a>
+                <a href="tugas2.html">Tugas 2</a>   <!-- Tombol Tugas 2 ditambahkan di navigasi -->
+            </div>
+        </div>
     </nav>
 
-    <div class="container">
-        <h1>Selamat Datang</h1>
+    <!-- Hero & Konten Utama -->
+    <div class="hero">
+        <h1>Selamat Datang di Website Saya</h1>
         <div class="divider"></div>
-        <p>Halo! Perkenalkan saya Hana Fakhriah Mahasiswi Sosial Ekonomi Perikanan di Fakultas Perikanan Ilmu Kelautan di universitas Lambung Mangkurat. Ini adalah website pribadi saya yang dirancang dengan nuansa warna <strong>Lavender dan Deep Purple</strong>.</p>
-        <p>Gunakan menu navigasi di atas untuk melihat profil saya, koleksi foto favorit, serta video pilihan yang telah saya siapkan.</p>
-        
+        <p class="subtitle">Hana Fakhriah</p>
+    </div>
+
+    <div class="main-card">
+        <h2 style="color: #6a1b9a; margin-bottom: 20px;">Halo, saya Hana Fakhriah 👋</h2>
+        <p>
+            Mahasiswi Program Studi Sosial Ekonomi Perikanan<br>
+            Fakultas Perikanan dan Ilmu Kelautan<br>
+            <strong>Universitas Lambung Mangkurat</strong>, Banjarmasin
+        </p>
+        <p>
+            Website pribadi ini dirancang dengan nuansa warna <strong>Lavender dan Deep Purple</strong> yang lembut dan elegan. 
+            Silakan jelajahi profil saya, koleksi foto favorit, serta video pilihan yang telah saya siapkan.
+        </p>
+
+        <!-- Tombol-tombol aksi -->
         <a href="biodata.html" class="btn">Lihat Biodata Saya</a>
+        <a href="tugas2.html" class="btn">Lihat Tugas 2</a>   <!-- Tombol Tugas 2 di halaman utama -->
     </div>
 
     <footer>
-        &copy; 2026 - Website Estetik Ungu
+        &copy; 2026 Hana Fakhriah • Website Estetik Ungu • Banjarmasin
     </footer>
 
 </body>
