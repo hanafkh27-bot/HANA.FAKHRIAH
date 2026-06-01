@@ -179,20 +179,53 @@
         <!-- Tombol-tombol aksi -->
         <a href="biodata.html" class="btn">Lihat Biodata Saya</a>
         <a href="https://hanafkh27-bot.github.io/HanaHANA/" class="btn">Lihat Tugas 2</a>
-        
-        <!-- Tugas 3 -->
-        <a href="tugas3.html" class="btn">Lihat Tugas 3</a>
-        <a href="https://forms.gle/7FvFMW2rkZRHZiA88" class="btn">Formulir (Tugas 3)</a>
-        <a href="https://datastudio.google.com/reporting/d9088de1-cc46-4926-b537-4c660d7f682f" class="btn">Sajian Data (Tugas 3)</a>
-        
-        <!-- Tugas 4 -->
-        <a href="https://hanafkh27-bot.github.io/HANA.FAKHRIAH/" class="btn">Lihat Tugas 4</a>
-        <a href="https://forms.gle/o6N41zmkVhY8SyML9" class="btn">Formulir (Tugas 4)</a>
-        <a href="https://docs.google.com/spreadsheets/d/1oeBZeNR9DaN8O8pcDzT5BVhIZYtu6w5U/edit?usp=sharing&ouid=112328977301631788057&rtpof=true&sd=true" class="btn">Sajian Data (Tugas 4)</a>
+        <a href="#" onclick="showTugas(3)" class="btn">Lihat Tugas 3</a>
+        <a href="#" onclick="showTugas(4)" class="btn">Lihat Tugas 4</a>
+        <a href="https://hanafkh27-bot.github.io/HanaHANA/" class="btn">Lihat Tugas Akhir</a>
+        </div>
+
+        <!-- TUGAS 3 -->
+        <div id="tugas3" class="content-section">
+            <h2 class="section-title">Tugas 3</h2>
+            <a href="https://forms.gle/7FvFMW2rkZRHZiA88" class="btn" target="_blank">Formulir Tugas 3</a>
+            <a href="https://datastudio.google.com/reporting/d9088de1-cc46-4926-b537-4c660d7f682f" class="btn" target="_blank">Sajian Data Tugas 3</a>
+            <br><br>
+            <a href="#" onclick="showHome()" class="btn" style="background: #6a1b9a;">← Kembali ke Beranda</a>
+        </div>
+
+        <!-- TUGAS 4 -->
+        <div id="tugas4" class="content-section">
+            <h2 class="section-title">Tugas 4</h2>
+            <a href="https://forms.gle/o6N41zmkVhY8SyML9" class="btn" target="_blank">Formulir Tugas 4</a>
+            <a href="https://docs.google.com/spreadsheets/d/1oeBZeNR9DaN8O8pcDzT5BVhIZYtu6w5U/edit?usp=sharing" class="btn" target="_blank">Sajian Data Tugas 4</a>
+            <br><br>
+            <a href="#" onclick="showHome()" class="btn" style="background: #6a1b9a;">← Kembali ke Beranda</a>
+        </div>
+
     </div>
 
     <footer>
         &copy; 2026 Hana Fakhriah • Website Estetik Ungu • Banjarmasin
     </footer>
+
+    <script>
+        function showHome() {
+            document.getElementById('home').classList.add('active');
+            document.getElementById('tugas3').classList.remove('active');
+            document.getElementById('tugas4').classList.remove('active');
+        }
+
+        function showTugas(nomor) {
+            document.getElementById('home').classList.remove('active');
+            document.getElementById('tugas3').classList.remove('active');
+            document.getElementById('tugas4').classList.remove('active');
+
+            if (nomor === 3) {
+                document.getElementById('tugas3').classList.add('active');
+            } else if (nomor === 4) {
+                document.getElementById('tugas4').classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
