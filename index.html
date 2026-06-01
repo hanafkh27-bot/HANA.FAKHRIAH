@@ -25,7 +25,6 @@
             line-height: 1.7;
             min-height: 100vh;
         }
-        /* Navigasi */
         nav {
             background: linear-gradient(90deg, #6a1b9a, #9c27b0);
             padding: 1.2rem 0;
@@ -63,7 +62,6 @@
             text-shadow: 0 0 8px rgba(255,255,255,0.6);
             transform: translateY(-2px);
         }
-        /* Hero Section */
         .hero {
             max-width: 900px;
             margin: 80px auto 50px;
@@ -89,7 +87,6 @@
             margin: 0 auto 30px;
             border-radius: 10px;
         }
-        /* Card Utama */
         .main-card {
             max-width: 850px;
             margin: 0 auto;
@@ -99,12 +96,6 @@
             box-shadow: 0 15px 35px rgba(106, 27, 154, 0.15);
             text-align: center;
         }
-        .main-card p {
-            font-size: 1.15rem;
-            color: #5e35b1;
-            margin-bottom: 25px;
-        }
-        /* Tombol */
         .btn {
             display: inline-block;
             margin: 12px 8px;
@@ -123,7 +114,6 @@
             box-shadow: 0 12px 25px rgba(156, 39, 176, 0.4);
             background: linear-gradient(90deg, #7b1fa2, #6a1b9a);
         }
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px 30px;
@@ -131,57 +121,63 @@
             font-size: 0.95rem;
             margin-top: 60px;
         }
-        /* Responsif */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.6rem;
-            }
-            .main-card {
-                padding: 35px 25px;
-            }
+
+        /* Untuk Nested Menu */
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .section-title {
+            color: #6a1b9a;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
+
     <!-- Navigasi -->
     <nav>
         <div class="nav-container">
-            <a href="index.html" class="logo">🌸 Hana</a>
+            <a href="#" class="logo" onclick="showHome()">🌸 Hana</a>
             <div>
-                <a href="index.html">Beranda</a>
-                <a href="biodata.html">Biodata</a>
-                <a href="galeri.html">Galeri Foto</a>
-                <a href="video.html">Video</a>
-                <a href="tugas2.html">Tugas 2</a>
-                <a href="tugas3.html">Tugas 3</a>
+            <a href="#" onclick="showHome()">Beranda</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="galeri.html">Galeri Foto</a>
+            <a href="video.html">Video</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero & Konten Utama -->
-    <div class="hero">
+    <!-- Hero Section -->
+    <div class="hero" id="hero">
         <h1>Selamat Datang di Website Saya</h1>
         <div class="divider"></div>
         <p class="subtitle">Hana Fakhriah</p>
     </div>
 
+    <!-- Main Card -->
     <div class="main-card">
-        <h2 style="color: #6a1b9a; margin-bottom: 20px;">Halo, saya Hana Fakhriah 👋</h2>
-        <p>
-            Mahasiswi Program Studi Sosial Ekonomi Perikanan<br>
-            Fakultas Perikanan dan Ilmu Kelautan<br>
-            <strong>Universitas Lambung Mangkurat</strong>, Banjarmasin
-        </p>
-        <p>
-            Website pribadi ini dirancang dengan nuansa warna <strong>Lavender dan Deep Purple</strong> yang lembut dan elegan.
-        </p>
-       
+
+        <!-- HOME -->
+        <div id="home" class="content-section active">
+            <h2 style="color: #6a1b9a; margin-bottom: 20px;">Halo, saya Hana Fakhriah 👋</h2>
+            <p>
+                Mahasiswi Program Studi Sosial Ekonomi Perikanan<br>
+                Fakultas Perikanan dan Ilmu Kelautan<br>
+                <strong>Universitas Lambung Mangkurat</strong>, Banjarbaru
+            </p>
+            <p>
+               
+            </p>
+
         <!-- Tombol-tombol aksi -->
-        <a href="biodata.html" class="btn">Lihat Biodata Saya</a>
-        <a href="https://hanafkh27-bot.github.io/HanaHANA/" class="btn">Lihat Tugas 2</a>
-        <a href="#" onclick="showTugas(3)" class="btn">Lihat Tugas 3</a>
-        <a href="#" onclick="showTugas(4)" class="btn">Lihat Tugas 4</a>
-        <a href="https://hanafkh27-bot.github.io/HanaHANA/" class="btn">Lihat Tugas Akhir</a>
+            <a href="biodata.html" class="btn">Lihat Biodata Saya</a>
+            <a href="https://hanafkh27-bot.github.io/HanaHANA/" class="btn">Lihat Tugas 2</a>
+            <a href="#" onclick="showTugas(3)" class="btn">Lihat Tugas 3</a>
+            <a href="#" onclick="showTugas(4)" class="btn">Lihat Tugas 4</a>
+            <a href="https://hanafkh27-bot.github.io/HanaHANA/" class="btn">Lihat Tugas Akhir</a>
         </div>
 
         <!-- TUGAS 3 -->
